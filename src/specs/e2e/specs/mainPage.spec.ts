@@ -1,7 +1,6 @@
-// tslint:disable-next-line:no-reference
-/// <reference path="../steps.d.ts" />
-
 "use strict";
+
+import * as assert from "assert";
 
 Feature("Main page functionality");
 
@@ -20,7 +19,12 @@ Scenario("should see header with links", (I) => {
 Scenario("should see result of search", async (I) => {
   I.amOnPage("/");
   I.click("//input[@placeholder='Search GitHub']");
-  I.fillField("//input[@placeholder='Search GitHub']", await I.generateRandomString(3));
 
-  I.see("All GitHub");
+  const query = await I.generateRandomString(3);
+  I.fillField("//input[@placeholder='Search GitHub']", query);
+  I.pressKey("Enter");
+
+  const url = await I.grabCurrentUrl();
+  assert(url.includes(`https://github.com/search?`));
+  assert(url.includes(`q=${query}`));
 });

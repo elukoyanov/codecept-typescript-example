@@ -13,5 +13,6 @@ exports.config = {
   include: {},
   bootstrap: null,
   mocha: {},
-  name: "codecept-typescript-example"
+  name: "codecept-typescript-example",
+  require: ["ts-node/register"]
 };
