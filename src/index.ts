@@ -1,7 +1,3 @@
-export default function hello(who = "World") {
-  console.log(`Hello, ${who}!`);
-};
+import { hello } from "./modules/someModule";
 
-export {
-  hello
-};
+hello("Marble");

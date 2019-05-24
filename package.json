@@ -1,8 +1,18 @@
 {
   "name": "codecept-typescript-example",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Example project of codeceptjs with typescript.",
   "repository": "https://github.com/LukoyanovE/codecept-typescript-example.git",
   "author": "Evgeny Lukoyanov <lukoyanov94@mail.ru>",
-  "license": "MIT"
+  "license": "MIT",
+  "scripts": {
+    "build": "webpack --bail --config=webpack.config.js"
+  },
+  "devDependencies": {
+    "ts-loader": "^6.0.1",
+    "typescript": "^3.4.5",
+    "webpack": "^4.32.2",
+    "webpack-cli": "^3.3.2"
+  },
+  "dependencies": {}
 }
