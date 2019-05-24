@@ -1,3 +1,4 @@
 import { hello } from "./modules/someModule";
 
-hello("Marble");
+// tslint:disable-next-line:no-console
+console.log(hello("Marble"));
