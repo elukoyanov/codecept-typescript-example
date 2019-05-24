@@ -2,7 +2,7 @@
 Example of using codecept.js with typescript.
 
 Used packages:
-- codeceptjs
+- codeceptjs ^2.1.3
 - typescript ^3.4.5
 - ts-lint ^5.16.0
 - ts-node
