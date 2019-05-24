@@ -215,6 +215,7 @@ declare namespace CodeceptJS {
     runInWeb(fn: Function) : void,
     debug(msg: string) : void,
     debugSection(section: string, msg: string) : void,
+    generateRandomString(len: number, charSet?: string) : Promise<string>,
     say: () => any; 
     retryStep(opts: string) : void,
 
