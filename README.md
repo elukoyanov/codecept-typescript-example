@@ -3,8 +3,8 @@ Example of using codecept.js with typescript.
 
 Used packages:
 - codeceptjs
-- typescript
-- ts-lint
+- typescript ^3.4.5
+- ts-lint ^5.16.0
 - ts-node
 
 More information about e2e testing framework on
