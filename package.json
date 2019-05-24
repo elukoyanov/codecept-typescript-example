@@ -1,0 +1,8 @@
+{
+  "name": "codecept-typescript-example",
+  "version": "0.0.1",
+  "description": "Example project of codeceptjs with typescript.",
+  "repository": "https://github.com/LukoyanovE/codecept-typescript-example.git",
+  "author": "Evgeny Lukoyanov <lukoyanov94@mail.ru>",
+  "license": "MIT"
+}
