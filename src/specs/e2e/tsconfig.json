@@ -12,7 +12,7 @@
     },
     "types": [
       "node",
-      "./steps"
+      "./typings/steps"
     ]
   },
   "include": ["src/**/*"]
