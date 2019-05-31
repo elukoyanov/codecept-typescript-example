@@ -8,8 +8,8 @@
   "scripts": {
     "build": "webpack --bail --config=webpack.config.js",
     "lint": "tslint -p tsconfig.json -c tslint.json",
-    "test:e2e": "TS_NODE_PROJECT='./src/specs/E2E/tsconfig.json' codeceptjs run",
-    "test:e2e:def": "TS_NODE_PROJECT='./src/specs/E2E/tsconfig.json' codeceptjs def && mv steps.d.ts ./src/specs/e2e/"
+    "test:e2e": "TS_NODE_PROJECT='./src/specs/e2e/tsconfig.json' codeceptjs run",
+    "test:e2e:def": "TS_NODE_PROJECT='./src/specs/e2e/tsconfig.json' codeceptjs def && mv steps.d.ts ./src/specs/e2e/"
   },
   "devDependencies": {
     "@types/node": "^12.0.2",
