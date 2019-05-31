@@ -9,7 +9,9 @@
     "build": "webpack --bail --config=webpack.config.js",
     "lint": "tslint -p tsconfig.json -c tslint.json",
     "test:e2e": "TS_NODE_PROJECT='./src/specs/e2e/tsconfig.json' codeceptjs run",
-    "test:e2e:def": "TS_NODE_PROJECT='./src/specs/e2e/tsconfig.json' codeceptjs def && mv steps.d.ts ./src/specs/e2e/"
+    "test:e2e:windows": "(set TS_NODE_PROJECT=./src/specs/e2e/tsconfig.json) && codeceptjs run",
+    "test:e2e:def": "TS_NODE_PROJECT='./src/specs/e2e/tsconfig.json' codeceptjs def && mv steps.d.ts ./src/specs/e2e/typings/",
+    "test:e2e:def:windows": "(set TS_NODE_PROJECT=./src/specs/e2e/tsconfig.json) && codeceptjs def && mv steps.d.ts ./src/specs/e2e/typings/"
   },
   "devDependencies": {
     "@types/node": "^12.0.2",
