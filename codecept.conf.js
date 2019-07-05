@@ -3,7 +3,7 @@ exports.config = {
   output: "./output",
   helpers: {
     WebDriver: {
-      url: "https://github.com",
+      url: "http://localhost:5000",
       browser: "chrome"
     },
     RandomGeneratorHelper: {
