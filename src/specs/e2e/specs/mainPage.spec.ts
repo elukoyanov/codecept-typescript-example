@@ -6,17 +6,14 @@ Feature("Main page functionality");
 
 Scenario("should see header with links", (I) => {
   I.amOnPage("/");
-  I.seeElement({ css: "header .HeaderMenu nav" });
-  within("header .HeaderMenu nav > ul", () => {
-    I.see("Why GitHub?");
-    I.see("Enterprise");
-    I.see("Explore");
-    I.see("Marketplace");
-    I.see("Pricing");
+  I.seeElement({ css: "header.header nav" });
+  within("header.header nav > ul", () => {
+    I.see("Main page");
+    I.see("About");
   });
 });
 
-Scenario("should see result of search", async (I) => {
+xScenario("should see result of search", async (I) => {
   I.amOnPage("/");
   I.click("//input[@placeholder='Search GitHub']");
 
