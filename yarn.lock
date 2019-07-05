@@ -114,31 +114,31 @@
   resolved "https://registry.yarnpkg.com/@types/node/-/node-8.10.50.tgz#f3d68482b1f54b5f4fba8daaac385db12bb6a706"
   integrity sha512-+ZbcUwJdaBgOZpwXeT0v+gHC/jQbEfzoc9s4d0rN0JIKeQbuTrT+A2n1aQY6LpZjrLXJT7avVUqiCecCJeeZxA==
 
-"@wdio/config@^5.9.1":
-  version "5.9.1"
-  resolved "https://registry.yarnpkg.com/@wdio/config/-/config-5.9.1.tgz#a4337d4743e57def03064e0044c634a7120da413"
-  integrity sha512-u5dqcTpUk4eXILEy5ytKX+0s7vXVHAwU/GghhbWrbL3mDTvZ65Wn6IyDGtBLckY6lfa2KF5Tswk0cg9mCw0mnA==
+"@wdio/config@^5.10.8":
+  version "5.10.8"
+  resolved "https://registry.yarnpkg.com/@wdio/config/-/config-5.10.8.tgz#247e971548f20989a98938501a9318bf52a6ce4f"
+  integrity sha512-991t0lXvqB6odM84Ck9rAoFoCE/sqQV2QAQtGtj9eliVUEKIBiA+MK522X85JAEkz7OO1rup+sxdMqF+gQHqsQ==
   dependencies:
-    "@wdio/logger" "^5.9.0"
-    deepmerge "^2.0.1"
+    "@wdio/logger" "^5.9.3"
+    deepmerge "^3.2.0"
     glob "^7.1.2"
 
-"@wdio/logger@^5.9.0":
-  version "5.9.0"
-  resolved "https://registry.yarnpkg.com/@wdio/logger/-/logger-5.9.0.tgz#e43b31dd40bcd9af0ff3dc35aace5d7457087fa7"
-  integrity sha512-L08MyO844LoTOnOZFxbupbTeqMAH7ZmrrNtN5AXpk3hJP7t4i5A+7eCiNWMpUpmOGHzM+04W27mYdaSei7imKg==
+"@wdio/logger@^5.9.3":
+  version "5.9.3"
+  resolved "https://registry.yarnpkg.com/@wdio/logger/-/logger-5.9.3.tgz#8aab6f1e8aafe7b655b0840e0ed9dcfd70744887"
+  integrity sha512-tpvu/wQqLAaShIIqZr7e/xl3lt9IeE6z/9DN59r+6xTC+RfD8YJ3D1n/c2jOsGbs/IW8RSWRvOERBWvpPcyQxw==
   dependencies:
     chalk "^2.3.0"
     loglevel "^1.6.0"
-    loglevel-plugin-prefix "^0.5.3"
-    strip-ansi "^4.0.0"
+    loglevel-plugin-prefix "^0.8.4"
+    strip-ansi "^5.2.0"
 
-"@wdio/repl@^5.9.1":
-  version "5.9.1"
-  resolved "https://registry.yarnpkg.com/@wdio/repl/-/repl-5.9.1.tgz#6f5550e6559ed5b4cc6e236c8824cd89880968b0"
-  integrity sha512-GUZ35ZLfNAIwKH/3TNrrusisMVX5Ukm9aLjbCRRKUCqGudD9yMFnkw1iJgfWFk38OnEcGS7plgdAJJooQx5Kqw==
+"@wdio/repl@^5.10.8":
+  version "5.10.8"
+  resolved "https://registry.yarnpkg.com/@wdio/repl/-/repl-5.10.8.tgz#681648b142a59b7c8db411ab630a84987f9866cc"
+  integrity sha512-fLR8ct5vY3LCji6QXvCJRZxrejLLgnMAt76Or6Mm9Lb3WmdgkO/tayPL1mYi/QsYPqbPaFgawnQn6CgHwZasVw==
   dependencies:
-    "@wdio/config" "^5.9.1"
+    "@wdio/config" "^5.10.8"
 
 "@webassemblyjs/ast@1.8.5":
   version "1.8.5"
@@ -621,14 +621,6 @@ aws4@^1.8.0:
   resolved "https://registry.yarnpkg.com/aws4/-/aws4-1.8.0.tgz#f0e003d9ca9e7f59c7a508945d7b2ef9a04a542f"
   integrity sha512-ReZxvNHIOv88FlT7rxcXIIC0fPt4KZqZbOlivyWtXLt8ESx84zd3kMC6iK5jVeS2qt+g7ftS7ye4fi06X5rtRQ==
 
-axios@^0.18.0:
-  version "0.18.0"
-  resolved "https://registry.yarnpkg.com/axios/-/axios-0.18.0.tgz#32d53e4851efdc0a11993b6cd000789d70c05102"
-  integrity sha1-MtU+SFHv3AoRmTts0AB4nXDAUQI=
-  dependencies:
-    follow-redirects "^1.3.0"
-    is-buffer "^1.1.5"
-
 axios@^0.19.0:
   version "0.19.0"
   resolved "https://registry.yarnpkg.com/axios/-/axios-0.19.0.tgz#8e09bff3d9122e133f7b8101c8fbdd00ed3d2ab8"
@@ -1097,14 +1089,14 @@ code-point-at@^1.0.0:
   resolved "https://registry.yarnpkg.com/code-point-at/-/code-point-at-1.1.0.tgz#0d070b4d043a5bea33a2f1a40e2edb3d9a4ccf77"
   integrity sha1-DQcLTQQ6W+ozovGkDi7bPZpMz3c=
 
-codeceptjs@^2.1.3:
-  version "2.1.3"
-  resolved "https://registry.yarnpkg.com/codeceptjs/-/codeceptjs-2.1.3.tgz#0caf06ba0ccd18c5e28ebe5abdaeb2d9ed5a6e49"
-  integrity sha512-TvJa0mhBlYDR+sEcpgIpyl2qcqp3bkDd8tSxfML2Rwm6HkB7mupntFxM3xq/FQjYHcx/uB5XyF7SGyx57EKETA==
+codeceptjs@^2.1.5:
+  version "2.1.5"
+  resolved "https://registry.yarnpkg.com/codeceptjs/-/codeceptjs-2.1.5.tgz#e93954f31d4cd8816f8df754723cd021d35ac007"
+  integrity sha512-Tij/12dtq8YlZfuVrdX1o9WJqznX2T3OwhpphBg+l7M7iVI92zlPY7LEY3zCH5f8+AFEp17JcqCGLNcCYO2ZhQ==
   dependencies:
     allure-js-commons "^1.3.2"
     archiver "^3.0.0"
-    axios "^0.18.0"
+    axios "^0.19.0"
     chalk "^1.1.3"
     commander "^2.20.0"
     css-to-xpath "^0.1.0"
@@ -1112,6 +1104,7 @@ codeceptjs@^2.1.3:
     escape-string-regexp "^1.0.3"
     figures "^2.0.0"
     fn-args "^4.0.0"
+    fs-extra "^8.0.1"
     gherkin "^5.1.0"
     glob "^6.0.1"
     inquirer "^6.3.1"
@@ -1123,6 +1116,7 @@ codeceptjs@^2.1.3:
     parse-function "^5.2.10"
     promise-retry "^1.1.1"
     requireg "^0.1.8"
+    resq "^1.5.0"
     sprintf-js "^1.1.1"
 
 collection-visit@^1.0.0:
@@ -1479,10 +1473,10 @@ deep-is@~0.1.3:
   resolved "https://registry.yarnpkg.com/deep-is/-/deep-is-0.1.3.tgz#b369d6fb5dbc13eecf524f91b070feedc357cf34"
   integrity sha1-s2nW+128E+7PUk+RsHD+7cNXzzQ=
 
-deepmerge@^2.0.1:
-  version "2.2.1"
-  resolved "https://registry.yarnpkg.com/deepmerge/-/deepmerge-2.2.1.tgz#5d3ff22a01c00f645405a2fbc17d0778a1801170"
-  integrity sha512-R9hc1Xa/NOBi9WRVUWg19rl1UB7Tt4kuPd+thNJgFZoxXsTz7ncaPaeIm+40oSGuP33DfMb4sZt1QIGiJzC4EA==
+deepmerge@^3.2.0:
+  version "3.3.0"
+  resolved "https://registry.yarnpkg.com/deepmerge/-/deepmerge-3.3.0.tgz#d3c47fd6f3a93d517b14426b0628a17b0125f5f7"
+  integrity sha512-GRQOafGHwMHpjPx9iCvTgpu9NojZ49q794EEL94JVEw6VaeA8XTUyBKvAkOOjBX9oJNiV6G3P+T+tihFjo2TqA==
 
 define-property@2.0.2, define-property@^2.0.2:
   version "2.0.2"
@@ -1979,13 +1973,6 @@ follow-redirects@1.5.10:
   dependencies:
     debug "=3.1.0"
 
-follow-redirects@^1.3.0:
-  version "1.7.0"
-  resolved "https://registry.yarnpkg.com/follow-redirects/-/follow-redirects-1.7.0.tgz#489ebc198dc0e7f64167bd23b03c4c19b5784c76"
-  integrity sha512-m/pZQy4Gj287eNy94nivy5wchN3Kp+Q5WgUPNy5lJSZ3sgkVKSYV/ZChMAQVIgx1SqfZ2zBZtPA2YlXIWxxJOQ==
-  dependencies:
-    debug "^3.2.6"
-
 for-in@^1.0.2:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/for-in/-/for-in-1.0.2.tgz#81068d295a8142ec0ac726c6e2200c30fb6d5e80"
@@ -2031,6 +2018,15 @@ fs-extra@^6.0.1:
   integrity sha512-GnyIkKhhzXZUWFCaJzvyDLEEgDkPfb4/TPvJCJVuS8MWZgoSsErf++QpiAlDnKFcqhRlm+tIOcencCjyJE6ZCA==
   dependencies:
     graceful-fs "^4.1.2"
+    jsonfile "^4.0.0"
+    universalify "^0.1.0"
+
+fs-extra@^8.0.1:
+  version "8.1.0"
+  resolved "https://registry.yarnpkg.com/fs-extra/-/fs-extra-8.1.0.tgz#49d43c45a88cd9677668cb7be1b46efdb8d2e1c0"
+  integrity sha512-yhlQgA6mnOJUKOsRUFsgJdQCvkKhcz8tlZG5HBQfReYZy46OwLcY+Zia0mtdHsOo9y/hP+CxMN0TU9QxoOtG4g==
+  dependencies:
+    graceful-fs "^4.2.0"
     jsonfile "^4.0.0"
     universalify "^0.1.0"
 
@@ -2209,6 +2205,11 @@ graceful-fs@^4.1.0, graceful-fs@^4.1.11, graceful-fs@^4.1.15, graceful-fs@^4.1.2
   version "4.1.15"
   resolved "https://registry.yarnpkg.com/graceful-fs/-/graceful-fs-4.1.15.tgz#ffb703e1066e8a0eeaa4c8b80ba9253eeefbfb00"
   integrity sha512-6uHUhOPEBgQ24HM+r6b/QwWfZq+yiFcipKFrOFiBEnWdy5sdzYoi+pJeQaPI5qOLRFqWmAXUPQNsielzdLoecA==
+
+graceful-fs@^4.2.0:
+  version "4.2.0"
+  resolved "https://registry.yarnpkg.com/graceful-fs/-/graceful-fs-4.2.0.tgz#8d8fdc73977cb04104721cb53666c1ca64cd328b"
+  integrity sha512-jpSvDPV4Cq/bgtpndIWbI5hmYxhQGHPC4d4cqBPb4DLniCfhJokdXhwhaDuLBGLQdvvRum/UiX6ECVIPvDXqdg==
 
 grapheme-splitter@^1.0.2:
   version "1.0.4"
@@ -2893,10 +2894,10 @@ log-driver@^1.2.7:
   resolved "https://registry.yarnpkg.com/log-driver/-/log-driver-1.2.7.tgz#63b95021f0702fedfa2c9bb0a24e7797d71871d8"
   integrity sha512-U7KCmLdqsGHBLeWqYlFA0V0Sl6P08EE1ZrmA9cxjUE0WVqT9qnyVDPz1kzpFEP0jdJuFnasWIfSd7fsaNXkpbg==
 
-loglevel-plugin-prefix@^0.5.3:
-  version "0.5.3"
-  resolved "https://registry.yarnpkg.com/loglevel-plugin-prefix/-/loglevel-plugin-prefix-0.5.3.tgz#8e9131b96e4697a0dba517996f76b9e6c3f43210"
-  integrity sha512-zRAJw3WYCQAJ6xfEIi04/oqlmR6jkwg3hmBcMW82Zic3iPWyju1gwntcgic0m5NgqYNJ62alCmb0g/div26WjQ==
+loglevel-plugin-prefix@^0.8.4:
+  version "0.8.4"
+  resolved "https://registry.yarnpkg.com/loglevel-plugin-prefix/-/loglevel-plugin-prefix-0.8.4.tgz#2fe0e05f1a820317d98d8c123e634c1bd84ff644"
+  integrity sha512-WpG9CcFAOjz/FtNht+QJeGpvVl/cdR6P0z6OcXSkr8wFJOsV2GRj2j10JLfjuA4aYkcKCNIEqRGCyTife9R8/g==
 
 loglevel@^1.6.0:
   version "1.6.1"
@@ -4221,10 +4222,12 @@ semver@^6.0.0:
   resolved "https://registry.yarnpkg.com/semver/-/semver-6.1.0.tgz#e95dc415d45ecf03f2f9f83b264a6b11f49c0cca"
   integrity sha512-kCqEOOHoBcFs/2Ccuk4Xarm/KiWRSLEX9CAZF8xkJ6ZPlIoTZ8V5f7J16vYLJqDbR7KrxTJpR2lqjIEm2Qx9cQ==
 
-serialize-error@^3.0.0:
-  version "3.0.0"
-  resolved "https://registry.yarnpkg.com/serialize-error/-/serialize-error-3.0.0.tgz#80100282b09be33c611536f50033481cb9cc87cf"
-  integrity sha512-+y3nkkG/go1Vdw+2f/+XUXM1DXX1XcxTl99FfiD/OEPUNw4uo0i6FKABfTAN5ZcgGtjTRZcEbxcE/jtXbEY19A==
+serialize-error@^4.1.0:
+  version "4.1.0"
+  resolved "https://registry.yarnpkg.com/serialize-error/-/serialize-error-4.1.0.tgz#63e1e33ede20bcd89d9f0528ea4c15fbf0f2b78a"
+  integrity sha512-5j9GgyGsP9vV9Uj1S0lDCvlsd+gc2LEPVK7HHHte7IyPwOD4lVQFeaX143gx3U5AnoCi+wbcb3mvaxVysjpxEw==
+  dependencies:
+    type-fest "^0.3.0"
 
 serialize-javascript@^1.7.0:
   version "1.7.0"
@@ -4568,7 +4571,7 @@ strip-ansi@^4.0.0:
   dependencies:
     ansi-regex "^3.0.0"
 
-strip-ansi@^5.1.0:
+strip-ansi@^5.1.0, strip-ansi@^5.2.0:
   version "5.2.0"
   resolved "https://registry.yarnpkg.com/strip-ansi/-/strip-ansi-5.2.0.tgz#8c9a536feb6afc962bdfa5b104a5091c1ad9c0ae"
   integrity sha512-DuRs1gKbBqsMKIZlrffwlug8MHkcnpjs5VPmL1PAh+mA30U0DTotfDZ0d2UUsXpPmPmMMJ6W773MaA3J+lbiWA==
@@ -4835,6 +4838,11 @@ type-check@~0.3.2:
   dependencies:
     prelude-ls "~1.1.2"
 
+type-fest@^0.3.0:
+  version "0.3.1"
+  resolved "https://registry.yarnpkg.com/type-fest/-/type-fest-0.3.1.tgz#63d00d204e059474fe5e1b7c011112bbd1dc29e1"
+  integrity sha512-cUGJnCdr4STbePCgqNFbpVNCepa+kAVohJs1sLhxzdH+gnEoOd8VhbYa7pD3zZYGiURWM2xzEII3fQcRizDkYQ==
+
 typedarray@^0.0.6:
   version "0.0.6"
   resolved "https://registry.yarnpkg.com/typedarray/-/typedarray-0.0.6.tgz#867ac74e3864187b1d3d47d996a78ec5c8830777"
@@ -5003,25 +5011,25 @@ watchpack@^1.5.0:
     graceful-fs "^4.1.2"
     neo-async "^2.5.0"
 
-webdriver@^5.9.1:
-  version "5.9.1"
-  resolved "https://registry.yarnpkg.com/webdriver/-/webdriver-5.9.1.tgz#03344549f09e4f123438d5e1e76444f96a1cd0ac"
-  integrity sha512-emUetEEJKN6ZsyZzj28D4HKC5p7Qo3ZSuuRlH9TpWyCp8ahxu3UicgL19ES//Sy1xPomWOi2Xk54/FLv/BIxgQ==
+webdriver@^5.10.9:
+  version "5.10.9"
+  resolved "https://registry.yarnpkg.com/webdriver/-/webdriver-5.10.9.tgz#25d511e39288201328359a22eb602a519e5816df"
+  integrity sha512-TbkCNY5/bS7rXf8T2LHVs5y7HI7D6zr38WLDMUegU4Ubb1j+Vst7rS1iShNO1fRaARi10CLJydZ5xF40NHgNtQ==
   dependencies:
-    "@wdio/config" "^5.9.1"
-    "@wdio/logger" "^5.9.0"
-    deepmerge "^2.0.1"
+    "@wdio/config" "^5.10.8"
+    "@wdio/logger" "^5.9.3"
+    deepmerge "^3.2.0"
     lodash.merge "^4.6.1"
     request "^2.83.0"
 
-webdriverio@^5.9.1:
-  version "5.9.1"
-  resolved "https://registry.yarnpkg.com/webdriverio/-/webdriverio-5.9.1.tgz#07b26bba7fa2d164a0f192adcb049dcda89f9e4e"
-  integrity sha512-QYlIIrfqr7I0OSkg9HsZyOGpo7d8MlrH7ueo5MHsgNR2QgZG1OxHk/1edV3Te9Q2AUcpCmIKO1IOAJDxlYA+Rw==
+webdriverio@^5.10.10:
+  version "5.10.10"
+  resolved "https://registry.yarnpkg.com/webdriverio/-/webdriverio-5.10.10.tgz#1db00db60df6d666b18b196fe19bf30a7eb106e5"
+  integrity sha512-JzWcs747Ir1L/nHWmUecN5KgNiWuzlCgovefhsl1fw2iVrd/WoQ6mF+dUcvHDcwD0vQ1ZwCHXCuUwqZNP3LP+Q==
   dependencies:
-    "@wdio/config" "^5.9.1"
-    "@wdio/logger" "^5.9.0"
-    "@wdio/repl" "^5.9.1"
+    "@wdio/config" "^5.10.8"
+    "@wdio/logger" "^5.9.3"
+    "@wdio/repl" "^5.10.8"
     css-value "^0.0.1"
     grapheme-splitter "^1.0.2"
     lodash.isobject "^3.0.2"
@@ -5030,8 +5038,8 @@ webdriverio@^5.9.1:
     lodash.zip "^4.2.0"
     resq "^1.5.0"
     rgb2hex "^0.1.0"
-    serialize-error "^3.0.0"
-    webdriver "^5.9.1"
+    serialize-error "^4.1.0"
+    webdriver "^5.10.9"
 
 webpack-cli@^3.3.2:
   version "3.3.2"
