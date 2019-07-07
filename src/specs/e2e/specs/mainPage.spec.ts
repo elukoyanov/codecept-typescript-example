@@ -1,7 +1,5 @@
 "use strict";
 
-import * as assert from "assert";
-
 Feature("Main page functionality");
 
 Scenario("should see header with links", (I) => {
@@ -13,15 +11,13 @@ Scenario("should see header with links", (I) => {
   });
 });
 
-xScenario("should see result of search", async (I) => {
+Scenario("should navigate by header navigation", (I) => {
   I.amOnPage("/");
-  I.click("//input[@placeholder='Search GitHub']");
+  I.see("Some main page text.");
 
-  const query = await I.generateRandomString(3);
-  I.fillField("//input[@placeholder='Search GitHub']", query);
-  I.pressKey("Enter");
+  I.click("//header[@class='header']//a[@href='/about']");
+  I.see("Some about text.");
 
-  const url = await I.grabCurrentUrl();
-  assert(url.includes(`https://github.com/search?`));
-  assert(url.includes(`q=${query}`));
+  I.click("//header[@class='header']//a[@href='/']");
+  I.see("Some main page text.");
 });
