@@ -6,7 +6,7 @@ It was created to be example for users, who has problems with codecept + TS sett
 
 Used packages:
 
-- codeceptjs ^2.1.5
+- codeceptjs ^2.3.0
 - typescript ^3.4.5
 - ts-lint ^5.16.0
 - ts-node ^8.1.0
