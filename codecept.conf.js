@@ -10,7 +10,9 @@ exports.config = {
       require: "./src/specs/e2e/helpers/randomGenerator.helper.ts"
     }
   },
-  include: {},
+  include: {
+    about: "./src/specs/e2e/pages/about.page.ts"
+  },
   bootstrap: null,
   mocha: {},
   name: "codecept-typescript-example",

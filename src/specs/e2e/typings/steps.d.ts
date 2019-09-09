@@ -1,5 +1,5 @@
 
-type ICodeceptCallback = (i?: CodeceptJS.I, current?:any, ...args: any) => void;
+type ICodeceptCallback = (i?: CodeceptJS.I, current?: any, aboutPage?: CodeceptJS.aboutPage, ...args: any) => void;
 
 declare class FeatureConfig {
   retry(times: number): FeatureConfig
@@ -44,9 +44,9 @@ declare class Container {
 
 declare class RecorderSession {
   running: boolean
-    start(name: string): void
-    restore(name: string): void
-    catch(fn: CallableFunction): void
+  start(name: string): void
+  restore(name: string): void
+  catch(fn: CallableFunction): void
 }
 
 declare class Recorder {
@@ -60,12 +60,12 @@ declare class Recorder {
   add(taskName: string, fn?: CallableFunction, force?: boolean, retry?: boolean): Promise<any>
   retry(opts: Object): Promise<any>
   catch(customErrFn: CallableFunction): Promise<any>
-  catchWithoutStop(customErrFn: CallableFunction ): Promise<any>
+  catchWithoutStop(customErrFn: CallableFunction): Promise<any>
   throw(err: Error): Promise<any>
   saveFirstAsyncError(err: Error): void
   getAsyncErr(): Promise<Error>
   cleanAsyncErr(): void
-  stop():void
+  stop(): void
   promise(): Promise<any>
   scheduled(): string[]
   toString(): string
@@ -249,6 +249,7 @@ declare function AfterSuite(callback: ICodeceptCallback): void;
 
 declare function inject(): {
   I: CodeceptJS.I
+  aboutPage: CodeceptJS.aboutPage
 };
 declare function locate(selector: LocatorOrString): Locator;
 declare function within(selector: LocatorOrString, callback: Function): Promise<any>;
@@ -267,112 +268,120 @@ declare namespace CodeceptJS {
   export const config: Config
 
   export interface I {
-    defineTimeout(timeouts: string) : void,
-    amOnPage(url: string) : void,
-    click(locator: LocatorOrString, context?: LocatorOrString) : void,
-    doubleClick(locator: LocatorOrString, context?: LocatorOrString) : void,
-    rightClick(locator: LocatorOrString, context: LocatorOrString) : void,
-    fillField(field: LocatorOrString, value: string) : void,
-    appendField(field: LocatorOrString, value: string) : void,
-    clearField(field: LocatorOrString) : void,
-    selectOption(select: LocatorOrString, option: string) : void,
-    attachFile(locator: LocatorOrString, pathToFile: string) : void,
-    checkOption(field: LocatorOrString, context?: LocatorOrString) : void,
-    uncheckOption(field: LocatorOrString, context?: LocatorOrString) : void,
-    grabTextFrom(locator: LocatorOrString) : Promise<string>,
-    grabHTMLFrom(locator: LocatorOrString) : Promise<string>,
-    grabValueFrom(locator: LocatorOrString) : Promise<string>,
-    grabCssPropertyFrom(locator: LocatorOrString, cssProperty: string) : Promise<string>,
-    grabAttributeFrom(locator: LocatorOrString, attr: string) : Promise<string>,
-    seeInTitle(text: string) : void,
-    seeTitleEquals(text: string) : void,
-    dontSeeInTitle(text: string) : void,
-    grabTitle() : Promise<string>,
-    see(text: string, context?: LocatorOrString) : void,
-    seeTextEquals(text: string, context?: LocatorOrString) : void,
-    dontSee(text: string, context?: LocatorOrString) : void,
-    seeInField(field: LocatorOrString, value: string) : void,
-    dontSeeInField(field: LocatorOrString, value: string) : void,
-    seeCheckboxIsChecked(field: LocatorOrString) : void,
-    dontSeeCheckboxIsChecked(field: LocatorOrString) : void,
-    seeElement(locator: LocatorOrString) : void,
-    dontSeeElement(locator: LocatorOrString) : void,
-    seeElementInDOM(locator: LocatorOrString) : void,
-    dontSeeElementInDOM(locator: LocatorOrString) : void,
-    seeInSource(text: string) : void,
-    grabSource() : Promise<string>,
-    grabBrowserLogs() : Promise<string>,
-    grabCurrentUrl() : Promise<string>,
-    dontSeeInSource(text: string) : void,
-    seeNumberOfElements(locator: LocatorOrString, num: number) : void,
-    seeNumberOfVisibleElements(locator: LocatorOrString, num: number) : void,
-    seeCssPropertiesOnElements(locator: LocatorOrString, cssProperties: string) : void,
-    seeAttributesOnElements(locator: LocatorOrString, attributes: string) : void,
-    grabNumberOfVisibleElements(locator: LocatorOrString) : Promise<string>,
-    seeInCurrentUrl(url: string) : void,
-    dontSeeInCurrentUrl(url: string) : void,
-    seeCurrentUrlEquals(url: string) : void,
-    dontSeeCurrentUrlEquals(url: string) : void,
-    executeScript(fn: Function) : void,
-    executeAsyncScript(fn: Function) : void,
-    scrollTo(locator: LocatorOrString, offsetX?: number, offsetY?: number) : void,
-    moveCursorTo(locator: LocatorOrString, offsetX?: number, offsetY?: number) : void,
-    saveScreenshot(fileName: string, fullPage?: string) : void,
-    setCookie(cookie: string) : void,
-    clearCookie(cookie: string) : void,
-    seeCookie(name: string) : void,
-    dontSeeCookie(name: string) : void,
-    grabCookie(name: string) : Promise<string>,
-    acceptPopup() : void,
-    cancelPopup() : void,
-    seeInPopup(text: string) : void,
-    grabPopupText() : Promise<string>,
-    pressKey(key: string) : void,
-    resizeWindow(width: number, height: number) : void,
-    dragAndDrop(srcElement: string, destElement: string) : void,
-    dragSlider(locator: LocatorOrString, offsetX?: number) : void,
-    grabAllWindowHandles() : Promise<string>,
-    grabCurrentWindowHandle() : Promise<string>,
-    switchToWindow(window: string) : void,
-    closeOtherTabs() : void,
-    wait(sec: number) : void,
-    waitForEnabled(locator: LocatorOrString, sec?: number) : void,
-    waitForElement(locator: LocatorOrString, sec?: number) : void,
-    waitUntilExists(locator: LocatorOrString, sec?: number) : void,
-    waitInUrl(urlPart: string, sec?: number) : void,
-    waitUrlEquals(urlPart: string, sec?: number) : void,
-    waitForText(text: string, sec?: number, context?: LocatorOrString) : void,
-    waitForValue(field: LocatorOrString, value: string, sec?: number) : void,
-    waitForVisible(locator: LocatorOrString, sec?: number) : void,
-    waitNumberOfVisibleElements(locator: LocatorOrString, num: number, sec?: number) : void,
-    waitForInvisible(locator: LocatorOrString, sec?: number) : void,
-    waitToHide(locator: LocatorOrString, sec?: number) : void,
-    waitForStalenessOf(locator: LocatorOrString, sec?: number) : void,
-    waitForDetached(locator: LocatorOrString, sec?: number) : void,
-    waitForFunction(fn: Function, argsOrSec?: string, sec?: number) : void,
-    waitUntil(fn: Function, sec?: number, timeoutMsg?: string, interval?: string) : void,
-    switchTo(locator: LocatorOrString) : void,
-    switchToNextTab(num?: number, sec?: number) : void,
-    switchToPreviousTab(num?: number, sec?: number) : void,
-    closeCurrentTab() : void,
-    openNewTab() : void,
-    grabNumberOfOpenTabs() : Promise<string>,
-    refreshPage() : void,
-    scrollPageToTop() : void,
-    scrollPageToBottom() : void,
-    grabPageScrollPosition() : Promise<string>,
-    setGeoLocation(latitude: string, longitude: string, altitude?: string) : void,
-    grabGeoLocation() : Promise<string>,
-    runOnIOS(caps: string, fn: Function) : void,
-    runOnAndroid(caps: string, fn: Function) : void,
-    runInWeb(fn: Function) : void,
-    debug(msg: string) : void,
-    debugSection(section: string, msg: string) : void,
-    generateRandomString(len: number, charSet?: string) : Promise<string>,
+    defineTimeout(timeouts: string): void,
+    amOnPage(url: string): void,
+    click(locator: LocatorOrString, context?: LocatorOrString): void,
+    doubleClick(locator: LocatorOrString, context?: LocatorOrString): void,
+    rightClick(locator: LocatorOrString, context: LocatorOrString): void,
+    fillField(field: LocatorOrString, value: string): void,
+    appendField(field: LocatorOrString, value: string): void,
+    clearField(field: LocatorOrString): void,
+    selectOption(select: LocatorOrString, option: string): void,
+    attachFile(locator: LocatorOrString, pathToFile: string): void,
+    checkOption(field: LocatorOrString, context?: LocatorOrString): void,
+    uncheckOption(field: LocatorOrString, context?: LocatorOrString): void,
+    grabTextFrom(locator: LocatorOrString): Promise<string>,
+    grabHTMLFrom(locator: LocatorOrString): Promise<string>,
+    grabValueFrom(locator: LocatorOrString): Promise<string>,
+    grabCssPropertyFrom(locator: LocatorOrString, cssProperty: string): Promise<string>,
+    grabAttributeFrom(locator: LocatorOrString, attr: string): Promise<string>,
+    seeInTitle(text: string): void,
+    seeTitleEquals(text: string): void,
+    dontSeeInTitle(text: string): void,
+    grabTitle(): Promise<string>,
+    see(text: string, context?: LocatorOrString): void,
+    seeTextEquals(text: string, context?: LocatorOrString): void,
+    dontSee(text: string, context?: LocatorOrString): void,
+    seeInField(field: LocatorOrString, value: string): void,
+    dontSeeInField(field: LocatorOrString, value: string): void,
+    seeCheckboxIsChecked(field: LocatorOrString): void,
+    dontSeeCheckboxIsChecked(field: LocatorOrString): void,
+    seeElement(locator: LocatorOrString): void,
+    dontSeeElement(locator: LocatorOrString): void,
+    seeElementInDOM(locator: LocatorOrString): void,
+    dontSeeElementInDOM(locator: LocatorOrString): void,
+    seeInSource(text: string): void,
+    grabSource(): Promise<string>,
+    grabBrowserLogs(): Promise<string>,
+    grabCurrentUrl(): Promise<string>,
+    dontSeeInSource(text: string): void,
+    seeNumberOfElements(locator: LocatorOrString, num: number): void,
+    seeNumberOfVisibleElements(locator: LocatorOrString, num: number): void,
+    seeCssPropertiesOnElements(locator: LocatorOrString, cssProperties: string): void,
+    seeAttributesOnElements(locator: LocatorOrString, attributes: string): void,
+    grabNumberOfVisibleElements(locator: LocatorOrString): Promise<string>,
+    seeInCurrentUrl(url: string): void,
+    dontSeeInCurrentUrl(url: string): void,
+    seeCurrentUrlEquals(url: string): void,
+    dontSeeCurrentUrlEquals(url: string): void,
+    executeScript(fn: Function): void,
+    executeAsyncScript(fn: Function): void,
+    scrollTo(locator: LocatorOrString, offsetX?: number, offsetY?: number): void,
+    moveCursorTo(locator: LocatorOrString, offsetX?: number, offsetY?: number): void,
+    saveScreenshot(fileName: string, fullPage?: string): void,
+    setCookie(cookie: string): void,
+    clearCookie(cookie: string): void,
+    seeCookie(name: string): void,
+    dontSeeCookie(name: string): void,
+    grabCookie(name: string): Promise<string>,
+    acceptPopup(): void,
+    cancelPopup(): void,
+    seeInPopup(text: string): void,
+    grabPopupText(): Promise<string>,
+    pressKey(key: string): void,
+    resizeWindow(width: number, height: number): void,
+    dragAndDrop(srcElement: string, destElement: string): void,
+    dragSlider(locator: LocatorOrString, offsetX?: number): void,
+    grabAllWindowHandles(): Promise<string>,
+    grabCurrentWindowHandle(): Promise<string>,
+    switchToWindow(window: string): void,
+    closeOtherTabs(): void,
+    wait(sec: number): void,
+    waitForEnabled(locator: LocatorOrString, sec?: number): void,
+    waitForElement(locator: LocatorOrString, sec?: number): void,
+    waitUntilExists(locator: LocatorOrString, sec?: number): void,
+    waitInUrl(urlPart: string, sec?: number): void,
+    waitUrlEquals(urlPart: string, sec?: number): void,
+    waitForText(text: string, sec?: number, context?: LocatorOrString): void,
+    waitForValue(field: LocatorOrString, value: string, sec?: number): void,
+    waitForVisible(locator: LocatorOrString, sec?: number): void,
+    waitNumberOfVisibleElements(locator: LocatorOrString, num: number, sec?: number): void,
+    waitForInvisible(locator: LocatorOrString, sec?: number): void,
+    waitToHide(locator: LocatorOrString, sec?: number): void,
+    waitForStalenessOf(locator: LocatorOrString, sec?: number): void,
+    waitForDetached(locator: LocatorOrString, sec?: number): void,
+    waitForFunction(fn: Function, argsOrSec?: string, sec?: number): void,
+    waitUntil(fn: Function, sec?: number, timeoutMsg?: string, interval?: string): void,
+    switchTo(locator: LocatorOrString): void,
+    switchToNextTab(num?: number, sec?: number): void,
+    switchToPreviousTab(num?: number, sec?: number): void,
+    closeCurrentTab(): void,
+    openNewTab(): void,
+    grabNumberOfOpenTabs(): Promise<string>,
+    refreshPage(): void,
+    scrollPageToTop(): void,
+    scrollPageToBottom(): void,
+    grabPageScrollPosition(): Promise<string>,
+    setGeoLocation(latitude: string, longitude: string, altitude?: string): void,
+    grabGeoLocation(): Promise<string>,
+    runOnIOS(caps: string, fn: Function): void,
+    runOnAndroid(caps: string, fn: Function): void,
+    runInWeb(fn: Function): void,
+    debug(msg: string): void,
+    debugSection(section: string, msg: string): void,
+    generateRandomString(len: number, charSet?: string): Promise<string>,
     say: (text: any) => any;
     retryStep(opts?: any): I,
     retry(opts?: any): I,
 
+  }
+
+  export interface aboutPage {
+    aboutSection: string;
+    pageHeader: string;
+    pageHeaderText: string;
+    title: string;
+    url: string;
   }
 
 }
