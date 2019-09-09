@@ -1,5 +1,7 @@
 "use strict";
 
+import { aboutPage } from "codeceptjs";
+
 Feature("Main page functionality");
 
 Scenario("should see header with links", (I) => {
@@ -11,13 +13,14 @@ Scenario("should see header with links", (I) => {
   });
 });
 
-Scenario("should navigate by header navigation", (I) => {
+Scenario("should navigate by header navigation", (I, about: aboutPage) => {
   I.amOnPage("/");
-  I.see("Some main page text.");
+  I.see("Hello");
 
   I.click("//header[@class='header']//a[@href='/about']");
-  I.see("Some about text.");
+  I.seeElement(about.aboutSection);
+  I.see(about.pageHeaderText, locate(about.pageHeader));
 
   I.click("//header[@class='header']//a[@href='/']");
-  I.see("Some main page text.");
+  I.see("Hello");
 });

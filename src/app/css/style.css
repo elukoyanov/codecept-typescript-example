@@ -27,3 +27,7 @@
 .header nav li a:hover {
   background-color: darkturquoise;
 }
+
+section {
+  margin: 20px 0;
+}
